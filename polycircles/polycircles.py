@@ -1,5 +1,4 @@
 from geographiclib import geodesic
-import pprint
 
 def circle(latitude, longitude, radius, number_of_vertices):
 
