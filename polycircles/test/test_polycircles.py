@@ -46,4 +46,4 @@ class TestPolycircles(unittest.TestCase):
             assert_almost_equal(expected_azimuth, actual_azimuth, places=5)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbose=2)
