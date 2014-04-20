@@ -3,4 +3,7 @@ python:
   - "3.3"
   - "2.7"
   - "2.6"
+install:
+	- "pip install behave
 script:  python setup.py test
+script:  behave
