@@ -4,7 +4,7 @@ from nose.tools import assert_equal, assert_almost_equal
 from geopy.distance import vincenty
 from geographiclib import geodesic
 
-class TestPolycircles(unittest.TestCase):
+class TestGeometry(unittest.TestCase):
 
     def setUp(self):
         self.latitude = 32.074322
