@@ -41,13 +41,5 @@ class TestGeometry(unittest.TestCase):
         the return value of to_lon_lat()."""
         assert_equal(self.polycircle.to_kml(), self.polycircle.to_lon_lat())
 
-    def test_kml_polygon_1(self):
-        """Asserts that the KML output is valid for the simplekml package."""
-        kml = simplekml.Kml()
-        kml.newpolygon(name="Entrance to Nataf",
-                       outerboundaryis=self.polycircle.to_kml())
-        kml.save("test_kml_polygon_1.kml")
-
-
 if __name__ == '__main__':
     unittest.main()
