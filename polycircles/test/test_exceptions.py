@@ -3,6 +3,7 @@ from polycircles import polycircles
 from nose.tools import raises
 
 class TestExceptions(unittest.TestCase):
+    """Tests that the right exceptions are raised for erroneous inputs."""
 
     @raises(ValueError)
     def test_less_than_3_vertices_no_1(self):
