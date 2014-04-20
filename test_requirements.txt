@@ -1,1 +1,2 @@
-behave>=1.2.4
+behave >= 1.2.4
+geopy >= 0.99

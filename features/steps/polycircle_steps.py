@@ -1,9 +1,10 @@
 from polycircles import polycircles
 from nose.tools import assert_almost_equal
 from geographiclib import geodesic
+from geopy.distance import vincenty
 
-@given('A polycircle class with center at {latitude}, {longitude} with a radius of {radius} meters and {num_vertices} vertices')
-def step_impl(context, latitude, longitude, radius, num_vertices):
+@given('A polycircle class with center in "{location}" at ({latitude}, {longitude}) with a radius of {radius} meters and {num_vertices} vertices')
+def step_impl(context, location, latitude, longitude, radius, num_vertices):
     context.latitude = float(latitude)
     context.longitude = float(longitude)
     context.radius = float(radius)
@@ -17,11 +18,8 @@ def step_impl(context):
                                float(context.radius),
                                int(context.num_vertices))
 
-@then('the distance from the center to each vertex is 100, up to 5 decimal digits')
-def step_impl(context):
-    #for vertex in context.polycircle.to_lat_lon():
-    #    print(vertex)
-    #    assert False
+@then('each vertex is aligned in a correct azimuth (degrees), up to {places} decimal places')
+def step_impl(context, places):
     vertices = context.polycircle.to_lat_lon()
     for vertex in vertices:
         vertex_number = vertices.index(vertex)
@@ -32,4 +30,12 @@ def step_impl(context):
         if actual_azimuth < 0:
             actual_azimuth = 360.0 + actual_azimuth
 
-        assert_almost_equal(expected_azimuth, actual_azimuth, places=5)
+        assert_almost_equal(expected_azimuth, actual_azimuth, places=int(places))
+
+@then('the distance (meters) of each vertex from the center is {distance}, up to {places} decimal places')
+def step_imp(context, distance, places):
+    vertices = context.polycircle.to_lat_lon()
+    for vertex in vertices:
+        actual_distance = vincenty((context.latitude, context.longitude),
+                                   (vertex[0], vertex[1])).meters
+        assert_almost_equal(actual_distance, float(distance), int(places))
