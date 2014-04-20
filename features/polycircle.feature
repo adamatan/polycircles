@@ -9,3 +9,6 @@ Scenario Outline: A Polycircle whose vertices have the correct distance from the
   Examples:
   | latitude     | longitude    | radius     | num_vertices  |
   | 32.074322    | 34.792081    | 100        | 36            |
+  | 32.074322    | 34.792081    | 100        | 100           |
+  | 32.074322    | 34.792081    | 1          | 100           |
+  | 32.074322    | 34.792081    | 0.2        | 100           |
