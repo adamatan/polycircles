@@ -11,10 +11,12 @@ class TestGeometry(unittest.TestCase):
         self.longitude = 34.792081
         self.radius_meters = 100
         self.number_of_vertices = 36
-        self.vertices = polycircles.circle(latitude=self.latitude,
+        polycircle = polycircles.Polycircle(latitude=self.latitude,
                                            longitude=self.longitude,
                                            radius=self.radius_meters,
                                            number_of_vertices=self.number_of_vertices)
+
+        self.vertices = polycircle.to_lat_lon()
 
     def test_number_of_vertices(self):
         """Does the number of vertices in the circle match the input?
