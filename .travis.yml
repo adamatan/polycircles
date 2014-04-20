@@ -4,5 +4,6 @@ python:
   - "2.7"
   - "2.6"
 install: "pip install -r test_requirements.txt"
-script:  python setup.py test
-script:  behave
+script:
+  - python setup.py test
+  - behave
