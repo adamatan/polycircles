@@ -25,7 +25,34 @@ class TestExceptions(unittest.TestCase):
                                            radius=100,
                                            number_of_vertices=0)
 
+    @raises(ValueError)
+    def test_erroneous_latitude_1(self):
+        polycircle = polycircles.Polycircle(latitude=-100,
+                                            longitude=30,
+                                            radius=100)
 
+    @raises(ValueError)
+    def test_erroneous_latitude_2(self):
+        polycircle = polycircles.Polycircle(latitude=100,
+                                            longitude=30,
+                                            radius=100)
+
+    @raises(ValueError)
+    def test_erroneous_latitude_3(self):
+        polycircle = polycircles.Polycircle(latitude=200,
+                                            longitude=30,
+                                            radius=100)
+    @raises(ValueError)
+    def test_erroneous_longitude_1(self):
+        polycircle = polycircles.Polycircle(latitude=30,
+                                            longitude=-200,
+                                            radius=100)
+
+    @raises(ValueError)
+    def test_erroneous_longitude_2(self):
+        polycircle = polycircles.Polycircle(latitude=30,
+                                            longitude=200,
+                                            radius=100)
 
 if __name__ == '__main__':
     unittest.main(verbose=2)
