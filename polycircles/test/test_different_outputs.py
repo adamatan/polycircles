@@ -1,7 +1,7 @@
 import unittest
 from polycircles import polycircles
-from nose.tools import assert_equal, assert_almost_equal
-import re
+from nose.tools import assert_equal, assert_almost_equal, assert_is_not_none
+import simplekml
 
 class TestGeometry(unittest.TestCase):
     """Tests the various output methods: KML style, WKT, lat-lon and lon-lat."""
@@ -41,11 +41,13 @@ class TestGeometry(unittest.TestCase):
         the return value of to_lon_lat()."""
         assert_equal(self.polycircle.to_kml(), self.polycircle.to_lon_lat())
 
-    def test_wkt_form(self):
-        """Asserts that the to_wkt() return value complies with the WKT
-        form."""
-        assert_equal(self.polycircle.to_kml(), self.polycircle.to_lon_lat())
+    def test_kml_polygon_1(self):
+        """Asserts that the KML output is valid for the simplekml package."""
+        kml = simplekml.Kml()
+        kml.newpolygon(name="Entrance to Nataf",
+                       outerboundaryis=self.polycircle.to_kml())
+        kml.save("test_kml_polygon_1.kml")
 
 
 if __name__ == '__main__':
-    unittest.main(verbose=2)
+    unittest.main()
