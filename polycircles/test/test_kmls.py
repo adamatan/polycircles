@@ -3,7 +3,7 @@ from polycircles import polycircles
 import simplekml
 import pprint
 
-class TestGeometry(unittest.TestCase):
+class TestKMLs(unittest.TestCase):
     """Tests the KML representation of the Polycircles using the simplekml
     package."""
 
