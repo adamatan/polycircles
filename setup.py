@@ -1,5 +1,4 @@
 from setuptools import setup
-from setuptools_behave import behave_test
 
 setup(name='polycircles',
       version='0.1',
