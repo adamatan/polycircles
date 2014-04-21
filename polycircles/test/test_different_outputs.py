@@ -3,7 +3,7 @@ from polycircles import polycircles
 from nose.tools import assert_equal, assert_almost_equal, assert_is_not_none
 import simplekml
 
-class TestGeometry(unittest.TestCase):
+class TestDifferentOutputs(unittest.TestCase):
     """Tests the various output methods: KML style, WKT, lat-lon and lon-lat."""
 
     def setUp(self):
