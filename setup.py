@@ -3,7 +3,7 @@ from setuptools import setup
 setup(name='polycircles',
       version='0.1',
       description='Polycircles: WGS84 Circle approximations using polygons',
-      url='http://github.com/vioozer/servers',
+      url='https://github.com/adamatan/polycircles',
       author='Adam Matan',
       author_email='adam@matan.name',
       license='MIT',
