@@ -38,6 +38,19 @@ class TestKMLs(unittest.TestCase):
             simplekml.Color.changealphaint(200, simplekml.Color.red)
         kml.save("test_kml_polygon_2.kml")
 
+    def test_kml_polygon_3_manhattan(self):
+        """Asserts that the KML output is valid for the simplekml package."""
+        polycircle = polycircles.Polycircle(latitude=40.768085,
+                                            longitude=-73.981885,
+                                            radius=200,
+                                            number_of_vertices=36)
+        kml = simplekml.Kml()
+        pol = kml.newpolygon(name="Columbus Circle, Manhattan",
+                             outerboundaryis=polycircle.to_kml())
+        pol.style.polystyle.color = \
+            simplekml.Color.changealphaint(200, simplekml.Color.green)
+        kml.save("test_kml_polygon_3_manhattan.kml")
+
     def test_olympic_bagels2(self):
         """Creates bagel-shaped polygons in Rio (just for fun).."""
         circles = ((-22.971499, -43.183030, simplekml.Color.blue),

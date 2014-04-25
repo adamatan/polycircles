@@ -6,10 +6,22 @@
 Welcome to Polycircles's documentation!
 =======================================
 
-
-
 Polycircles is a Pythonic tool for creating accurate Polygonic approximations of circles on a WGS-84 earth grid.
 
+.. image:: _static/kml_manhattan.png
+   :height: 300 px
+   :alt: Polygon circle in Google Earth. Image Credit: Google
+   :align: center
+
+.. image:: _static/kml_tel_aviv.png
+   :height: 300 px
+   :alt: Polygon circle in Google Earth. Image Credit: Google
+   :align: center
+
+.. image:: _static/kml_rio.png
+   :scale: 50%
+   :alt: Polygon circle in Google Earth. Image Credit: Google
+   :align: center
 Contents:
 
 .. toctree::
