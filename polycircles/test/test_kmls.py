@@ -1,6 +1,7 @@
 import unittest
 from polycircles import polycircles
 import simplekml
+from geographiclib import geodesic
 
 class TestKMLs(unittest.TestCase):
     """Tests the KML representation of the Polycircles using the simplekml
@@ -50,6 +51,34 @@ class TestKMLs(unittest.TestCase):
         pol.style.polystyle.color = \
             simplekml.Color.changealphaint(200, simplekml.Color.green)
         kml.save("test_kml_polygon_3_manhattan.kml")
+
+    def test_kml_polygons_4_multiple_vertices(self):
+        """Creates polycircles with a varying amount of vertices."""
+        start_lat = -24.336113
+        start_lon = 14.976681
+
+        direct = geodesic.Geodesic.WGS84.Direct
+        kml = simplekml.Kml()
+
+        for row in range(6):
+            row_start = direct(start_lat, start_lon, 180, 100*row)
+            row_start_lat, row_start_lon = row_start['lat2'], row_start['lon2']
+            for column in range(6):
+                circle_center = direct(row_start_lat, row_start_lon,
+                                       90, 100*column)
+                circle_center_lat = circle_center['lat2']
+                circle_center_lon = circle_center['lon2']
+                number_of_vertices = (row*6)+column+3
+                polycircle = polycircles.Polycircle(circle_center_lat,
+                                                    circle_center_lon,
+                                                    40, number_of_vertices)
+                pol = kml.newpolygon(name="%d vertices" % number_of_vertices,
+                                     outerboundaryis=polycircle.to_kml())
+                pol.style.polystyle.color = \
+                    simplekml.Color.changealphaint(200,
+                                                   simplekml.Color.aquamarine)
+                kml.save("test_kml_multiple_vertices.kml")
+
 
     def test_olympic_bagels2(self):
         """Creates bagel-shaped polygons in Rio (just for fun).."""
