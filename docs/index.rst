@@ -1,15 +1,44 @@
-.. Polycircles documentation master file, created by
-   sphinx-quickstart on Mon Apr 21 13:22:59 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Welcome to Polycircles documentation!
+=====================================
 
-Welcome to Polycircles's documentation!
-=======================================
+Generates accurate polygonal approximation of circles, for KMLs and general usage.
 
-In short: Fake KML circles using accurate Polygons.
+.. toctree::
+   :maxdepth: 2
 
-Basic example
--------------
+Basic usage
+-----------
+
+Generates lat-lon pairs of a polygonal approximation for a circle.
+
+.. code:: python
+
+	>>> import pprint
+	>>> from polycircles import polycircles
+	>>> polycircle = polycircles.Polycircle(latitude=32.074523,
+	                                        longitude=34.791469,
+	                                        radius=20,
+	                                        number_of_vertices=12)
+	>>> pprint.pprint(polycircle.to_lat_lon())
+	((32.07470336197859, 34.791469),
+	 (32.074679198011374, 34.7915749137218),
+	 (32.074613180857156, 34.79165244781555),
+	 (32.07452299982296, 34.791680827083454),
+	 (32.074432818876005, 34.79165244745541),
+	 (32.07436680189626, 34.79157491336165),
+	 (32.07434263801628, 34.791469),
+	 (32.07436680189626, 34.79136308663835),
+	 (32.074432818876005, 34.791285552544586),
+	 (32.07452299982296, 34.791257172916545),
+	 (32.074613180857156, 34.79128555218445),
+	 (32.074679198011374, 34.791363086278196))
+
+KML circles
+-----------
+
+Generates a circle approximation readable by `simpleKML`_.
+
+.. _simpleKML : https://code.google.com/p/simplekml/
 
 .. code:: python
 
@@ -26,37 +55,24 @@ Basic example
 		simplekml.Color.changealphaint(200, simplekml.Color.green)
 	kml.save("test_kml_polygon_3_manhattan.kml")
 
+Note that a polygon with 36 vertices looks pretty much like a circle:
 
 .. image:: _static/kml_manhattan.png
    :height: 300 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-Polycircles is a Pythonic tool for creating accurate Polygonic approximations of circles on a WGS-84 earth grid.
+Adjusting the number of vertices
+--------------------------------
 
-.. image:: _static/kml_manhattan.png
-   :height: 300 px
-   :alt: Polygon circle in Google Earth. Image Credit: Google
-   :align: center
+Raising the number of vertices makes the polygon illusion more compelling.
+On the other side, too many vertices make the KML file larger and Google Earth slower.
+
+In my opinion, 36 edges are the right balance between appearances and file size.
 
 .. image:: _static/kml_namibia.png
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
-
-.. image:: _static/kml_rio.png
-   :height: 300 px
-   :alt: Polygon circle in Google Earth. Image Credit: Google
-   :align: center
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-Simple example
---------------
-
-
-
 
 Indices and tables
 ==================
