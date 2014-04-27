@@ -1,3 +1,5 @@
+.. _index:
+
 Welcome to Polycircles documentation!
 =====================================
 
@@ -6,6 +8,7 @@ Generates accurate polygonal approximation of circles, for KMLs and general usag
 .. toctree::
    :maxdepth: 2
 
+   index
    installing
    kmls
 
