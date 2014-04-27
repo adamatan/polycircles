@@ -19,7 +19,7 @@ setup(name='polycircles',
           "License :: OSI Approved :: MIT License",
           "Operating System :: OS Independent"
       ],
-      url='https://github.com/adamatan/polycircles',
+      url='http://polycircles.rtfd.org',
       author='Adam Matan',
       author_email='adam@matan.name',
       license='MIT',

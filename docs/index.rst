@@ -7,19 +7,19 @@ Generates accurate polygonal approximation of circles, for KMLs and general usag
    :maxdepth: 2
 
 Basic usage
------------
+===========
 
 Generates lat-lon pairs of a polygonal approximation for a circle.
 
 .. code:: python
 
-	>>> import pprint
-	>>> from polycircles import polycircles
-	>>> polycircle = polycircles.Polycircle(latitude=32.074523,
+	import pprint
+	from polycircles import polycircles
+	polycircle = polycircles.Polycircle(latitude=32.074523,
 	                                        longitude=34.791469,
 	                                        radius=20,
 	                                        number_of_vertices=12)
-	>>> pprint.pprint(polycircle.to_lat_lon())
+	pprint.pprint(polycircle.to_lat_lon())
 	((32.07470336197859, 34.791469),
 	 (32.074679198011374, 34.7915749137218),
 	 (32.074613180857156, 34.79165244781555),
@@ -34,7 +34,7 @@ Generates lat-lon pairs of a polygonal approximation for a circle.
 	 (32.074679198011374, 34.791363086278196))
 
 KML circles
------------
+===========
 
 Generates a circle approximation readable by `simpleKML`_.
 
@@ -63,7 +63,7 @@ Note that a polygon with 36 vertices looks pretty much like a circle:
    :align: center
 
 Adjusting the number of vertices
---------------------------------
+================================
 
 Raising the number of vertices makes the polygon illusion more compelling.
 On the other side, too many vertices make the KML file larger and Google Earth slower.
