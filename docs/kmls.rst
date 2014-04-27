@@ -65,10 +65,4 @@ a donut-shape can be easily created:
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
