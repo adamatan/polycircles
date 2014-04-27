@@ -6,7 +6,9 @@ Generates accurate polygonal approximation of circles, for KMLs and general usag
 .. toctree::
    :maxdepth: 2
 
+   installing
    kmls
+
 
 Basic usage
 ===========
