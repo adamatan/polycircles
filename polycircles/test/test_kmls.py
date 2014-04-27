@@ -21,23 +21,23 @@ class TestKMLs(unittest.TestCase):
         kml.save("test_kml_polygon_1.kml")
 
     def test_kml_polygon_2(self):
-        """Creates a bagel-shaped polygon."""
-        outer_polycircle = polycircles.Polycircle(latitude=32.074523,
-                                                  longitude=34.792,
-                                                  radius=20,
+        """Creates a torus-shaped polygon."""
+        outer_polycircle = polycircles.Polycircle(latitude=40.768085,
+                                                  longitude=-73.981885,
+                                                  radius=200,
                                                   number_of_vertices=36)
-        inner_polycircle = polycircles.Polycircle(latitude=32.074523,
-                                                  longitude=34.792,
-                                                  radius=16,
+        inner_polycircle = polycircles.Polycircle(latitude=40.768085,
+                                                  longitude=-73.981885,
+                                                  radius=180,
                                                   number_of_vertices=36)
 
         kml = simplekml.Kml()
-        pol = kml.newpolygon(name="Azrieli towers",
+        pol = kml.newpolygon(name="Torus around Columbus Circle, Manhattan",
                              outerboundaryis=outer_polycircle.to_kml(),
                              innerboundaryis=inner_polycircle.to_kml())
         pol.style.polystyle.color = \
             simplekml.Color.changealphaint(200, simplekml.Color.red)
-        kml.save("test_kml_polygon_2.kml")
+        kml.save("test_kml_polygon_2_torus_manhattan.kml")
 
     def test_kml_polygon_3_manhattan(self):
         """Asserts that the KML output is valid for the simplekml package."""
