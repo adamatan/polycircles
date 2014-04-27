@@ -43,13 +43,13 @@ a donut-shape can be easily created:
 .. code:: python
 
 	outer_polycircle = polycircles.Polycircle(latitude=40.768085,
-											  longitude=-73.981885,
-											  radius=200,
-											  number_of_vertices=36)
+	                                          longitude=-73.981885,
+	                                          radius=200,
+	                                          number_of_vertices=36)
 	inner_polycircle = polycircles.Polycircle(latitude=40.768085,
-											  longitude=-73.981885,
-											  radius=180,
-											  number_of_vertices=36)
+	                                          longitude=-73.981885,
+	                                          radius=180,
+	                                          number_of_vertices=36)
 
 	kml = simplekml.Kml()
 	pol = kml.newpolygon(name="Torus around Columbus Circle, Manhattan",
