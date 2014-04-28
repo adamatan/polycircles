@@ -51,14 +51,16 @@ Note that a polygon with 36 vertices looks pretty much like a circle:
 Sequence of lat-lon points
 --------------------------
 
+``polycircles`` can simply generate a tuple of lat-lon tuples:
+
 .. code:: python
 
 	import pprint
 	from polycircles import polycircles
 	polycircle = polycircles.Polycircle(latitude=32.074523,
-	                                        longitude=34.791469,
-	                                        radius=20,
-	                                        number_of_vertices=12)
+	                                    longitude=34.791469,
+	                                    radius=20,
+	                                    number_of_vertices=12)
 	pprint.pprint(polycircle.to_lat_lon())
 	((32.07470336197859, 34.791469),
 	 (32.074679198011374, 34.7915749137218),

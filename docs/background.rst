@@ -4,8 +4,8 @@
 Theory and background
 =====================
 
-Adjusting the number of vertices
---------------------------------
+The right number of vertices
+----------------------------
 
 Raising the number of vertices makes the polygon illusion more compelling.
 On the other side, too many vertices make the KML file larger and Google Earth slower.

@@ -1,7 +1,7 @@
 .. _kml-circles:
 
-Generating KML circles
-======================
+KML circles
+===========
 
 Basic KML circle
 ----------------
@@ -65,4 +65,9 @@ a donut-shape can be easily created:
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
+Or even:
 
+.. image:: _static/kml_rio.png
+   :height: 300 px
+   :alt: Polygon circle in Google Earth. Image Credit: Google
+   :align: center
