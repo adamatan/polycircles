@@ -35,11 +35,13 @@ Generates a circle approximation readable by `simpleKML`_.
 Note that a polygon with 36 vertices looks pretty much like a circle:
 
 .. figure:: _static/kml_manhattan.png
-   :height: 300 px
-   :alt: Polygon circle in Google Earth.
+   :width: 600 px
+   :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-   Polygon circle in Google Earth. Map data: `Google`_
+   A Polycircle above Columbus Square, Columbus Square, Manhattan, NYC, United States
+
+   Image: Google Earth, Credit: `Google`_
 
    .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
 
