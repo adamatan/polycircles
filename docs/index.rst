@@ -10,7 +10,8 @@ Generates accurate polygonal approximation of circles, for KMLs and general usag
 
    installing
    kmls
-   background
+   accuracy
+   development
 
 Installing
 ----------

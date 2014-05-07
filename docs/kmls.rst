@@ -32,8 +32,8 @@ Note that a polygon with 36 vertices looks pretty much like a circle:
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-Donuts!
--------
+Donut! (Well, Torus)
+--------------------
 
 Using the ``innerboundaryis`` of `simpleKML`_ Polygon object and two polycircles,
 a donut-shape can be easily created:
