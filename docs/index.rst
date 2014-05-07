@@ -3,7 +3,7 @@
 Welcome to Polycircles documentation!
 =====================================
 
-Generates accurate polygonal approximation of circles, for KMLs and general usage.
+Polygonal circle approximations for KMLs and general use.
 
 |buildStatus|
 
