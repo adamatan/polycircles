@@ -13,9 +13,10 @@ Changelog
  * Tests
  * Documentation
 
-TODO (0.2)
-----------
+TODO
+----
 
+ * Command line script, making Polycircles useful for other languages
  * Ellipses
  * Simple Torus creation
 
