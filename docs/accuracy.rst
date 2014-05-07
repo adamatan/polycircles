@@ -31,13 +31,15 @@ On the other side, too many vertices make the KML file larger and Google Earth s
 In my opinion, 36 edges are the right balance between appearances and file size.
 
 .. figure:: _static/kml_namibia.png
-   :alt: Polygon circle in Google Earth. Image Credit: Google
+   :width: 600 px
+   :alt: A Polycircle above The Namibian desert, Namibia. Image: Google Earth, Credit: `Google`_
    :align: center
 
-   Polygon circle in Google Earth. Map data: `Google`_
+   A Polycircle above The Namibian desert, Namibia.
+
+   Image: Google Earth, Credit: `Google`_
 
    .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
-
 
 
 
