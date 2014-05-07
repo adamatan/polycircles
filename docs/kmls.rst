@@ -32,7 +32,9 @@ Note that a polygon with 36 vertices looks pretty much like a circle:
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-   A Polycircle above Columbus Square, Manhattan, in Google Earth. Credit: `Google`_
+   A Polycircle above Columbus Square, Columbus Square, Manhattan, NYC, United States
+
+   Image: Google Earth, Credit: `Google`_
 
    .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
 
@@ -66,11 +68,13 @@ a donut-shape can be easily created:
 
 
 .. figure:: _static/kml_manhattan_torus.png
-   :height: 300 px
+   :width: 600 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-   Polygon circle in Google Earth. Map data: `Google`_
+   A Torus made from two Polycircles, Columbus Square, Manhattan, NYC, United States
+
+   Image: Google Earth, Credit: `Google`_
 
    .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
 
@@ -78,11 +82,13 @@ a donut-shape can be easily created:
 Or even:
 
 .. figure:: _static/kml_rio.png
-   :height: 300 px
+   :width: 600 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
 
-   Polygon circle in Google Earth. Map data: `Google`_
+   The Olympic logo made from 5 Torus Pplycircles, Copacabana beach, Rio de Janeiro, Brazil
+
+   Image: Google Earth, Credit: `Google`_
 
    .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
 
