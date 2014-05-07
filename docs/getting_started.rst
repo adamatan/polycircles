@@ -1,5 +1,8 @@
 .. _gettingStarted:
 
+Getting started
+===============
+
 Installing
 ----------
 
@@ -7,8 +10,8 @@ Installing
 
 	pip install polycircles
 
-KML circle
-----------
+Your first KML circle
+---------------------
 
 Generates a circle approximation readable by `simpleKML`_.
 

@@ -14,7 +14,7 @@ Generates accurate polygonal approximation of circles, for KMLs and general usag
 .. toctree::
    :maxdepth: 2
 
-   gettingStarted
+   getting_started
    installing
    kmls
    accuracy
