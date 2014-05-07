@@ -27,10 +27,15 @@ Generates a circle approximation readable by `simpleKML`_.
 
 Note that a polygon with 36 vertices looks pretty much like a circle:
 
-.. image:: _static/kml_manhattan.png
+.. figure:: _static/kml_manhattan.png
    :height: 300 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
+
+   Polygon circle in Google Earth. Map data: `Google`_
+
+   .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
+
 
 Donut! (Well, Torus)
 --------------------
@@ -60,14 +65,24 @@ a donut-shape can be easily created:
 	kml.save("test_kml_polygon_2_torus_manhattan.kml")
 
 
-.. image:: _static/kml_manhattan_torus.png
+.. figure:: _static/kml_manhattan_torus.png
    :height: 300 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
+
+   Polygon circle in Google Earth. Map data: `Google`_
+
+   .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
+
 
 Or even:
 
-.. image:: _static/kml_rio.png
+.. figure:: _static/kml_rio.png
    :height: 300 px
    :alt: Polygon circle in Google Earth. Image Credit: Google
    :align: center
+
+   Polygon circle in Google Earth. Map data: `Google`_
+
+   .. _Google : http://www.google.com/permissions/geoguidelines/attr-guide.html
+
