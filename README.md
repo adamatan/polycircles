@@ -3,7 +3,7 @@ polycircles
 
 Polycircles: WGS84 Circle approximations using polygons.
 
-[![Build Status](https://travis-ci.org/adamatan/polycircles.svg?branch=master)](https://travis-ci.org/adamatan/polycircles) [![Latest Version](https://pypip.in/version/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/) 
+[![Build Status](https://travis-ci.org/adamatan/polycircles.svg?branch=master)](https://travis-ci.org/adamatan/polycircles) [![Latest Version](https://pypip.in/version/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/) [![License](https://pypip.in/license/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/) [![Downloads](https://pypip.in/download/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 
 Approximate a circle using a 36-vertices polygon:
 
