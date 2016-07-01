@@ -5,6 +5,7 @@ python:
 install:
   - "pip install -r test_requirements.txt"
   - "python setup.py install"
+  - "pip freeze | grep nose"
 script:
   - "python setup.py test"
   - "behave -s"
