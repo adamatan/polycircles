@@ -1,3 +1,4 @@
+import os
 import unittest
 from polycircles import polycircles
 import simplekml
@@ -6,6 +7,8 @@ from geographiclib import geodesic
 class TestKMLs(unittest.TestCase):
     """Tests the KML representation of the Polycircles using the simplekml
     package."""
+
+    output_dir = 'kmls'
 
     def test_kml_polygon_1(self):
         """Asserts that the KML output is valid for the simplekml package."""
@@ -18,7 +21,7 @@ class TestKMLs(unittest.TestCase):
                              outerboundaryis=polycircle.to_kml())
         pol.style.polystyle.color = \
             simplekml.Color.changealphaint(200, simplekml.Color.green)
-        kml.save("test_kml_polygon_1.kml")
+        kml.save(os.path.join(TestKMLs.output_dir, "test_kml_polygon_1.kml"))
 
     def test_kml_polygon_2(self):
         """Creates a torus-shaped polygon."""
@@ -37,7 +40,7 @@ class TestKMLs(unittest.TestCase):
                              innerboundaryis=inner_polycircle.to_kml())
         pol.style.polystyle.color = \
             simplekml.Color.changealphaint(200, simplekml.Color.red)
-        kml.save("test_kml_polygon_2_torus_manhattan.kml")
+        kml.save(os.path.join(TestKMLs.output_dir, "test_kml_polygon_2_torus_manhattan.kml"))
 
     def test_kml_polygon_3_manhattan(self):
         """Asserts that the KML output is valid for the simplekml package."""
@@ -50,7 +53,7 @@ class TestKMLs(unittest.TestCase):
                              outerboundaryis=polycircle.to_kml())
         pol.style.polystyle.color = \
             simplekml.Color.changealphaint(200, simplekml.Color.green)
-        kml.save("test_kml_polygon_3_manhattan.kml")
+        kml.save(os.path.join(TestKMLs.output_dir, "test_kml_polygon_3_manhattan.kml"))
 
     def test_kml_polygons_4_multiple_vertices(self):
         """Creates polycircles with a varying amount of vertices."""
@@ -77,7 +80,7 @@ class TestKMLs(unittest.TestCase):
                 pol.style.polystyle.color = \
                     simplekml.Color.changealphaint(200,
                                                    simplekml.Color.aquamarine)
-                kml.save("test_kml_multiple_vertices.kml")
+                kml.save(os.path.join(TestKMLs.output_dir, "test_kml_multiple_vertices.kml"))
 
 
     def test_olympic_bagels2(self):
@@ -101,7 +104,7 @@ class TestKMLs(unittest.TestCase):
             pol.style.polystyle.color = \
                 simplekml.Color.changealphaint(150, circle[2])
 
-        kml.save("test_olympic_bagels_2.kml")
+        kml.save(os.path.join(TestKMLs.output_dir, "test_olympic_bagels_2.kml"))
 
 if __name__ == '__main__':
     unittest.main()

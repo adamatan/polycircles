@@ -19,10 +19,12 @@ class TestGeometry(unittest.TestCase):
         self.vertices = polycircle.to_lat_lon()
 
     def test_number_of_vertices(self):
-        """Does the number of vertices in the circle match the input?
+        """Does the number of vertices in the circle match the input+1?
+        The +1 is because the first vertex should be appended to the internal
+        list of vertices to properly "close" a polygon in KML.
         Asserts that the number of vertices in the approximation polygon
         matches the input."""
-        assert_equal(len(self.vertices), self.number_of_vertices)
+        assert_equal(len(self.vertices), self.number_of_vertices+1)
 
     def test_vertices_distance_from_center(self):
         """Does the distance of the vertices equals the input radius?
@@ -38,10 +40,9 @@ class TestGeometry(unittest.TestCase):
         is 360/n*i."""
         for vertex in self.vertices:
             vertex_number = self.vertices.index(vertex)
-            expected_azimuth = 360.0/len(self.vertices) * vertex_number
+            expected_azimuth = 360.0/(len(self.vertices)-1) * vertex_number
             actual_azimuth = (geodesic.Geodesic.WGS84.Inverse(
                 self.latitude, self.longitude, vertex[0], vertex[1]))['azi1']
-
             if actual_azimuth < 0:
                 actual_azimuth = 360.0 + actual_azimuth
 
