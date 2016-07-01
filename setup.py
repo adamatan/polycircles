@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='polycircles',
-      version='0.1',
+      version='0.2',
       description='Polycircles: WGS84 Circle approximations using polygons',
       long_description=open('README.md').read(),
       classifiers=[
