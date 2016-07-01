@@ -9,4 +9,4 @@ script:
   - "python setup.py test"
   - "behave -s"
   - "pip install polycircles"
-  - "pip uninstall polycircles"
+  - "yes | pip uninstall polycircles"
