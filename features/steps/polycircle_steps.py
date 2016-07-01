@@ -23,7 +23,7 @@ def step_impl(context, places):
     vertices = context.polycircle.to_lat_lon()
     for vertex in vertices:
         vertex_number = vertices.index(vertex)
-        expected_azimuth = 360.0/len(vertices) * vertex_number
+        expected_azimuth = 360.0/(len(vertices) - 1) * vertex_number
         actual_azimuth = (geodesic.Geodesic.WGS84.Inverse(
             context.latitude, context.longitude, vertex[0], vertex[1]))['azi1']
 
