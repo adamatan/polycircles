@@ -21,7 +21,7 @@ class TestLastPointInPolygonEqualsTheFirstOne(unittest.TestCase):
     """
 
     def setUp(self):
-        csvfile = 'sismos_continente2.csv'
+        csvfile = 'polycircles/test/sismos_continente2.csv'
         output_dir = 'kmls'
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
