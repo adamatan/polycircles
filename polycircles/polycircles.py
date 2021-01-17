@@ -1,7 +1,4 @@
 from geographiclib import geodesic
-import crange
-from itertools import cycle
-
 
 class Shape(object):
     """Common operations for shapes"""
