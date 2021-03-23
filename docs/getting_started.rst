@@ -13,13 +13,17 @@ Installing
 Useage
 ------
 
-This library uses WGS84 coordinates. Lattitude and longitude are in decimal degrees, distance is in meters. 
+This library uses WGS84 coordinates. Lattitude, longitude and ellipse orientation are in decimal degrees, distances are in meters. 
 
 Class:
 
     polycircle.Polycircle(latitude, longitude, radius, number_of_vertices=36)
 
+    polycircle.Polyellipse(latitude, longitude, semimajor, semiminor, orientation=0, number_of_vertices=36)
+
 Methods:
+
+These methods apply to both classes.
 
     to_lat_lon(): Returns a tuple of (lat, lon) tuples of the polygon.
     
