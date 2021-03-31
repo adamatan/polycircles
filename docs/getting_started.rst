@@ -10,6 +10,31 @@ Installing
 
 	pip install polycircles
 
+Useage
+------
+
+This library uses WGS84 coordinates. Lattitude, longitude and ellipse orientation are in decimal degrees, distances are in meters. 
+
+Class:
+
+    polycircle.Polycircle(latitude, longitude, radius, number_of_vertices=36)
+
+    polycircle.Polyellipse(latitude, longitude, semimajor, semiminor, orientation=0, number_of_vertices=36)
+
+Methods:
+
+These methods apply to both classes.
+
+    to_lat_lon(): Returns a tuple of (lat, lon) tuples of the polygon.
+    
+    to_kml(): Returns a tuple of (lon, lat) tuples suitable for a KML polygon.
+    
+    to_wkt(): Returns a WKT (Well Known Text) representation of the polygon. Note that WKT tuples are (lon, lat), not (lat, lon).
+    
+    to_lon_lat(): Returns a tuple of (lon, lat) tuples of the polygon. The (lon, lat) notation is used in KMLs and WKTs.
+    
+.. note:: The number of vertices must be passed as an integer.     
+    
 Your first KML circle
 ---------------------
 
