@@ -1,7 +1,7 @@
 import unittest
 from polycircles import polycircles
 from nose.tools import assert_equal, assert_almost_equal
-from geopy.distance import vincenty
+from geopy.distance import distance
 from geographiclib import geodesic
 
 class TestGeometry(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestGeometry(unittest.TestCase):
         Asserts that the distance from each vertex to the center of the
         circle equals the radius, in 5 decimal digits accuracy."""
         for vertex in self.vertices:
-            actual_distance = vincenty((self.latitude, self.longitude), (vertex[0], vertex[1])).meters
+            actual_distance = distance((self.latitude, self.longitude), (vertex[0], vertex[1])).meters
             assert_almost_equal(actual_distance, self.radius_meters, 5)
 
     def test_azimuth_of_vertices(self):
