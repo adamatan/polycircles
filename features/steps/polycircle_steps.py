@@ -1,7 +1,7 @@
 from polycircles import polycircles
 from nose.tools import assert_almost_equal
 from geographiclib import geodesic
-from geopy.distance import vincenty
+from geopy.distance import distance as geodesic_distance
 
 @given('A polycircle class with center in "{location}" at ({latitude}, {longitude}) with a radius of {radius} meters and {num_vertices} vertices')
 def step_impl(context, location, latitude, longitude, radius, num_vertices):
@@ -36,6 +36,6 @@ def step_impl(context, places):
 def step_imp(context, distance, places):
     vertices = context.polycircle.to_lat_lon()
     for vertex in vertices:
-        actual_distance = vincenty((context.latitude, context.longitude),
+        actual_distance = geodesic_distance((context.latitude, context.longitude),
                                    (vertex[0], vertex[1])).meters
         assert_almost_equal(actual_distance, float(distance), int(places))
