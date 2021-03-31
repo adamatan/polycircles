@@ -4,6 +4,7 @@ from nose.tools import assert_equal, assert_almost_equal
 from geopy.distance import distance
 from geographiclib import geodesic
 
+DECIMAL_POINT_ACCURACY = 6
 class TestGeometry(unittest.TestCase):
 
     def setUp(self):
@@ -32,7 +33,7 @@ class TestGeometry(unittest.TestCase):
         circle equals the radius, in 5 decimal digits accuracy."""
         for vertex in self.vertices:
             actual_distance = distance((self.latitude, self.longitude), (vertex[0], vertex[1])).meters
-            assert_almost_equal(actual_distance, self.radius_meters, 5)
+            assert_almost_equal(actual_distance, self.radius_meters, DECIMAL_POINT_ACCURACY)
 
     def test_azimuth_of_vertices(self):
         """Is the azimuth (bearing) to each vertex correct?
@@ -46,7 +47,7 @@ class TestGeometry(unittest.TestCase):
             if actual_azimuth < 0:
                 actual_azimuth = 360.0 + actual_azimuth
 
-            assert_almost_equal(expected_azimuth, actual_azimuth, places=5)
+            assert_almost_equal(expected_azimuth, actual_azimuth, places=DECIMAL_POINT_ACCURACY)
 
 if __name__ == '__main__':
     unittest.main(verbose=2)
