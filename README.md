@@ -1,21 +1,51 @@
-polycircles
-===========
+# polycircles
 
-Polycircles: WGS84 Circle approximations using polygons.
+WGS84 Circle approximations using polygons for KMLs.
 
 [![Build Status](https://github.com/adamatan/polycircles/actions/workflows/test.yaml/badge.svg)](https://github.com/adamatan/polycircles/actions)
 [![Latest Version](https://pypip.in/version/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 [![License](https://pypip.in/license/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 [![Downloads](https://pypip.in/download/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 
+## Getting started
+### Installing
+
+```bash
+pip install polycircles
+```
+### Examples
+
+#### Hello, polycircles
+
+```python
+import os
+from polycircles.polycircles import Polycircle
+
+polycircle = Polycircle(latitude=31.611878, longitude=34.505351, radius=1500)
+print(polycircle)
+```
+
+```bash
+POLYGON ((34.505351 31.625406, 34.508096 31.625201, 34.510758 31.624590...
+```
+
+#### Your first KML circle
+
+Generates a circle and use [simpleKML](https://pypi.org/project/simplekml/) to generate a KML file.
+
+```python
+import simplekml
+from polycircles.polycircles import Polycircle
+
+polycircle = Polycircle(latitude=40.768085,
+                        longitude=-73.981885,
+                        radius=200,
+                        number_of_vertices=36)
+kml = simplekml.Kml()
+pol = kml.newpolygon(name="Columbus Circle, Manhattan", outerboundaryis=polycircle.to_kml())
+pol.style.polystyle.color = simplekml.Color.changealphaint(200, simplekml.Color.green)
+
+kml.save("02.kml")
+```
+
 ![Manhattan example](https://raw.githubusercontent.com/adamatan/polycircles/master/docs/_static/kml_manhattan.png)
-
-Approximate a circle using a 36-vertices polygon:
-
-	>>> from polycircles import polycircles
-	>>> polycircle = polycircles.Polycircle(latitude = 32.074322, longitude=34.792081, radius=100, number_of_vertices=36)
-	>>> polycircle.to_lat_lon()
-	((32.075223809870174, 34.792081), (32.075210109219384, 34.79226491831068), (32.07516942356622, 34.792443248196115), (32.07510298915787, 34.792610571051924), (32.075012824622526, 34.79276180275308), (32.074901669628204, 34.792892348145145), (32.07477290163153, 34.792998240672475), (32.07463043324713, 34.793076262899916), (32.074478593357114, 34.79312404426628), (32.07432199557388, 34.79314013310001), (32.0741653980537, 34.79312404071046), (32.07401355892112, 34.793076256217155), (32.07387109169717, 34.79299823166882), (32.073742325123995, 34.792892337906565), (32.073631171644536, 34.79276179251449), (32.07354100853271, 34.79261056204826), (32.073474575284784, 34.792443241513354), (32.07343389038906, 34.79226491475485), (32.07342019000133, 34.792081), (32.07343389038906, 34.791897085245154), (32.073474575284784, 34.79171875848665), (32.07354100853271, 34.791551437951746), (32.073631171644536, 34.791400207485516), (32.073742325123995, 34.79126966209344), (32.07387109169717, 34.79116376833119), (32.07401355892112, 34.79108574378285), (32.0741653980537, 34.79103795928955), (32.07432199557388, 34.791021866899996), (32.074478593357114, 34.79103795573373), (32.07463043324713, 34.79108573710009), (32.07477290163153, 34.79116375932753), (32.074901669628204, 34.79126965185486), (32.075012824622526, 34.79140019724693), (32.07510298915787, 34.79155142894808), (32.07516942356622, 34.79171875180389), (32.075210109219384, 34.79189708168933), (32.075223809870174, 34.792081))
-
-Documentation: http://polycircles.readthedocs.org/en/latest/
-Code: https://github.com/adamatan/polycircles

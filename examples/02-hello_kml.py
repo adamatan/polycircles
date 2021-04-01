@@ -1,10 +1,12 @@
-import os
 import simplekml
 from polycircles.polycircles import Polycircle
 
-
-polycircle = Polycircle(latitude=31.611878, longitude=34.505351, radius=100)
+polycircle = Polycircle(latitude=40.768085,
+                        longitude=-73.981885,
+                        radius=200,
+                        number_of_vertices=36)
 kml = simplekml.Kml()
+pol = kml.newpolygon(name="Columbus Circle, Manhattan", outerboundaryis=polycircle.to_kml())
+pol.style.polystyle.color = simplekml.Color.changealphaint(200, simplekml.Color.green)
 
-pol = kml.newpolygon(name=f"Polycircle", outerboundaryis=polycircle.to_kml())
-kml.save('02.kml')
+kml.save("02.kml")
