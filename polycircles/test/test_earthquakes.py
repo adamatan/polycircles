@@ -25,8 +25,9 @@ class TestLastPointInPolygonEqualsTheFirstOne(unittest.TestCase):
         output_dir = 'kmls'
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
-        datafile = csv.reader(open(csvfile, 'rU'), delimiter=',')
-        quakelist = list(datafile)
+        with open(csvfile) as f:
+            datafile = csv.reader(f, delimiter=',')
+            quakelist = list(datafile)
         kml = simplekml.Kml()
         alpha = 100
         self.polycircles = []
