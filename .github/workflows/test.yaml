@@ -29,4 +29,9 @@ jobs:
     - name: BDD tests
       run: |
         behave
-
+    - name: Run the examples
+      run: |
+        python setup.py install
+        cd examples
+        pip install simplekml
+        python *.py
