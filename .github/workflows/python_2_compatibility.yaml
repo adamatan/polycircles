@@ -1,4 +1,4 @@
-name: Unit & BDD tests
+name: Python 2 compatibility
 
 on: [push]
 
