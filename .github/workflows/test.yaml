@@ -25,6 +25,7 @@ jobs:
         python -m doctest -v polycircles/polycircles.py  
     - name: Unit tests
       run: |
+        pip freeze
         python setup.py test
     - name: BDD tests
       run: |
