@@ -4,7 +4,7 @@ from nose.tools import assert_equal, assert_almost_equal
 from geopy.distance import distance
 from geographiclib import geodesic
 
-DECIMAL_POINT_ACCURACY = 6
+DECIMAL_POINT_ACCURACY = 5
 class TestGeometry(unittest.TestCase):
 
     def setUp(self):
@@ -30,7 +30,7 @@ class TestGeometry(unittest.TestCase):
     def test_vertices_distance_from_center(self):
         """Does the distance of the vertices equals the input radius?
         Asserts that the distance from each vertex to the center of the
-        circle equals the radius, in 5 decimal digits accuracy."""
+        circle equals the radius, in the given decimal digits accuracy."""
         for vertex in self.vertices:
             actual_distance = distance((self.latitude, self.longitude), (vertex[0], vertex[1])).meters
             assert_almost_equal(actual_distance, self.radius_meters, DECIMAL_POINT_ACCURACY)
