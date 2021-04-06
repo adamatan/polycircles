@@ -1,5 +1,10 @@
 from setuptools import setup
 
+if sys.version_info >= (3,5):
+    geopy = 'geopy >= 2'
+else:
+    geopy = 'geopy == 1.0'
+
 setup(name='polycircles',
       version='0.3',
       description='Polycircles: WGS84 Circle approximations using polygons',
@@ -27,8 +32,7 @@ setup(name='polycircles',
       include_package_data=True,
       install_requires=['geographiclib'],
       tests_require=[
-          'geopy > 1.0, <2.0 ; python_version < "3.5.0"',
-          'geopy >= 2 ; python_version => "3.5.0"',
+          geopy,
           'nose >= 1.3.0',
           'simplekml >= 1.3.0'
       ],
