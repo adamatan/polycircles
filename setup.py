@@ -1,4 +1,10 @@
+import sys
 from setuptools import setup
+
+if sys.version_info >= (3,5):
+    geopy = 'geopy >= 2'
+else:
+    geopy = 'geopy == 1.0'
 
 setup(name='polycircles',
       version='0.3',
@@ -26,7 +32,12 @@ setup(name='polycircles',
       packages=['polycircles'],
       include_package_data=True,
       install_requires=['geographiclib'],
-      tests_require=['geopy >= 0.99', 'nose >= 1.3.0', 'simplekml >= 1.3.0'],
+      tests_require=[
+          geopy,
+          'nose >= 1.3.0',
+          'simplekml >= 1.3.0',
+          'behave'
+      ],
       test_suite='polycircles.test',
       zip_safe=False)
 from setuptools import setup
