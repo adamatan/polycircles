@@ -36,7 +36,7 @@ setup(name='polycircles',
           geopy,
           'nose >= 1.3.0',
           'simplekml >= 1.3.0',
-          'behave'
+          'behave >= 1.2.6'
       ],
       test_suite='polycircles.test',
       zip_safe=False)
