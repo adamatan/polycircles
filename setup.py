@@ -35,7 +35,8 @@ setup(name='polycircles',
       tests_require=[
           geopy,
           'nose >= 1.3.0',
-          'simplekml >= 1.3.0'
+          'simplekml >= 1.3.0',
+          'behave'
       ],
       test_suite='polycircles.test',
       zip_safe=False)
