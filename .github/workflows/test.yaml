@@ -28,6 +28,9 @@ jobs:
         python setup.py test
     - name: BDD tests
       run: |
+        pip freeze
+        pip install beheve
+        pip freeze
         behave
     - name: Run the examples
       run: |
