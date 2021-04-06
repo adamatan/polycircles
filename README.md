@@ -7,15 +7,13 @@ WGS84 Circle approximations using polygons for KMLs.
 [![License](https://pypip.in/license/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 [![Downloads](https://pypip.in/download/polycircles/badge.png)](https://pypi.python.org/pypi/polycircles/)
 
-## Getting started
-### Installing
+
+## Installing
 
 ```bash
 pip install polycircles
 ```
-### Examples
-
-#### Hello, polycircles
+## Create a polygon
 
 ```python
 import os
@@ -25,11 +23,13 @@ polycircle = Polycircle(latitude=31.611878, longitude=34.505351, radius=1500)
 print(polycircle)
 ```
 
+Should print its [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation:
+
 ```bash
 POLYGON ((34.505351 31.625406, 34.508096 31.625201, 34.510758 31.624590...
 ```
 
-#### Your first KML circle
+## A KML circle
 
 Generates a circle and use [simpleKML](https://pypi.org/project/simplekml/) to generate a KML file.
 
