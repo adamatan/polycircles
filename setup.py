@@ -26,7 +26,12 @@ setup(name='polycircles',
       packages=['polycircles'],
       include_package_data=True,
       install_requires=['geographiclib'],
-      tests_require=['geopy >= 0.99', 'nose >= 1.3.0', 'simplekml >= 1.3.0'],
+      tests_require=[
+          'geopy > 1.0, <2.0 ; python_version < "3.5.0"',
+          'geopy >= 2 ; python_version => "3.5.0"',
+          'nose >= 1.3.0',
+          'simplekml >= 1.3.0'
+      ],
       test_suite='polycircles.test',
       zip_safe=False)
 from setuptools import setup
