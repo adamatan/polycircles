@@ -128,7 +128,7 @@ class Polyellipse(Shape):
         vertices = []
         for i in range(number_of_vertices):
             degree = 360.0/number_of_vertices*i # degrees from semimajor axis
-            radius = semiminor/sqrt(1-self.e*cos(radians(degree)))
+            radius = semiminor/sqrt(1-(self.e*cos(radians(degree)))**2)
             angle = degree + orientation # rotate the ellipse to the orientation specified 
             vertex = geodesic.Geodesic.WGS84.Direct(latitude, longitude,
                                                     angle, radius)
