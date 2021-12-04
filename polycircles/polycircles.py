@@ -1,6 +1,8 @@
 from geographiclib import geodesic
 
 DEFAULT_NUMBER_OF_VERTICES = 36
+
+
 class Shape(object):
     """Common operations for shapes"""
 
@@ -61,12 +63,18 @@ class Polycircle(Shape):
         self.number_of_vertices = number_of_vertices
 
         vertices = []
-        for i in range(number_of_vertices):
-            degree = 360.0/number_of_vertices*i
-            vertex = geodesic.Geodesic.WGS84.Direct(latitude, longitude, degree, radius)
+        for i in range(self.number_of_vertices):
+            bearing = 360.0 / self.number_of_vertices * i # turn around center point
+
+            # allow longitude unroll: longitudes will extend beyond +-180 if necessary
+            # (for circles that cross the antimeridian)
+            #
+            # concerning polar latitudes/circles that overlap poles:
+            # Google Earth has known issues with polygons that contain poles, linestring are ok
+            vertex = geodesic.Geodesic.WGS84.Direct(self.latitude, self.longitude, bearing, self.radius,
+                                                    geodesic.GeodesicCapability.STANDARD | geodesic.GeodesicCapability.LONG_UNROLL)
             lat = vertex['lat2']
             lon = vertex['lon2']
             vertices.append((lat, lon))
-        vertices.append(vertices[0])
+        vertices.append(vertices[0]) # its a closed figure
         self.vertices = tuple(vertices)
-
