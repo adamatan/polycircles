@@ -17,7 +17,7 @@ Will install polycircles and all its dependencies.
 Testing
 -------
 
-First, clone the `gir repo <https://github.com/adamatan/polycircles>`_.
+First, clone the `git repo <https://github.com/adamatan/polycircles>`_.
 
 .. code:: bash
 
